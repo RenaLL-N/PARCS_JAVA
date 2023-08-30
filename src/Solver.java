@@ -92,7 +92,7 @@ public class Solver implements AM
         for (int versionNumber = 0; versionNumber < deamons; versionNumber++) {
             int x = versionNumber*n/deamons;
             int y = (versionNumber+1)*n/deamons - 1;
-            double [][] matrix = new double[m][y+1];
+            double [][] matrix = new double[m][n/deamons];
 
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n/deamons; j++) {
