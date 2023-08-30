@@ -1,20 +1,20 @@
 all: run
 
 clean:
-	rm -f out/Parcs.jar out/MatrixFrobeniusNormTask.jar
+	rm -f out/Solver.jar out/FindNormMatrix.jar
 
-out/Parcs.jar: out/parcs.jar src/Parcs.java
-	@javac -cp /out/parcs.jar src/Parcs.java
-	@jar cf out/Parcs.jar -C src Parcs.class -C src
-	@rm -f src/Parcs.class
+out/Solver.jar: out/parcs.jar src/Solver.java
+	@javac -cp /out/parcs.jar src/Solver.java
+	@jar cf out/Solver.jar -C src Solver.class -C src
+	@rm -f src/Solver.class
 
-out/MatrixFrobeniusNormTask.jar: out/parcs.jar src/MatrixFrobeniusNormTask.java
-	@javac -cp out/parcs.jar src/MatrixFrobeniusNormTask.java
-	@jar cf out/MatrixFrobeniusNormTask.jar -C src MatrixFrobeniusNormTask.class -C src
-	@rm -f src/MatrixFrobeniusNormTask.class
+out/FindNormMatrix.jar: out/parcs.jar src/FindNormMatrix.java
+	@javac -cp out/parcs.jar src/FindNormMatrix.java
+	@jar cf out/FindNormMatrix.jar -C src FindNormMatrix.class -C src
+	@rm -f src/FindNormMatrix.class
 
-build: out/Parcs.jar out/MatrixFrobeniusNormTask.jar
+build: out/Solver.jar out/FindNormMatrix.jar
 
-run: out/Parcs.jar out/MatrixFrobeniusNormTask.jar
-	@cd out && java -cp 'parcs.jar:Parcs.jar' Parcs
+run: out/Solver.jar out/FindNormMatrix.jar
+	@cd out && java -cp 'parcs.jar:Solver.jar' Solver
 	

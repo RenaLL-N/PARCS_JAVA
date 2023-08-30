@@ -17,7 +17,7 @@ public class FindNormMatrix implements AM {
                 sum += Math.pow(data[i][j], p);
             }
 
-            sum = Math.pow(sum, (double)p/(double)q);
+            sum = Math.pow(sum, (double)q/(double)p);
             norm += sum;
         }
 
