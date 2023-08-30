@@ -65,26 +65,26 @@ public class Solver implements AM
 
         // виведення на сервер
         System.out.println("The Solver class have read data from the parent server");
-        System.out.println("p = " + m);
-        System.out.println("q = " + n);
+        System.out.println("p = " + p);
+        System.out.println("q = " + q);
         System.out.println("m = " + m);
         System.out.println("n = " + n);
 
         // Обчислення часу виконання
         long tStart = System.nanoTime();
         // запуск методу для розподілу даних на парксі
-        long res = solve(info, deamons, p, q, m, n, matrix);
+        double res = solve(info, deamons, p, q, m, n, matrix);
 
         long tEnd = System.nanoTime();
         // виведення часу виконання
-        System.out.println("Working time on matrix" + m + "x" + n + " processes: " + ((tEnd - tStart) / 1000000) + "ms");
+        System.out.println("Working time on matrix " + m + "x" + n + " processes: " + ((tEnd - tStart) / 1000000) + "ms");
         System.out.println("L"+ p+ ","+ q + " norm = " + res);
     }
 
-    static public long solve(AMInfo info, int deamons, int p, int q, int m, int n, int[][] a)
+    static public double solve(AMInfo info, int deamons, int p, int q, int m, int n, int[][] a)
     {
         // змінна для запису результата
-        long Res = 0;
+        double Res = 0.0;
 
         List <point> points = new ArrayList<point>();
         List <channel> channels = new ArrayList<channel>();
@@ -112,11 +112,12 @@ public class Solver implements AM
         // Mapping results
         for(int versionNumber = 0; versionNumber < deamons; versionNumber++)
         {
-            Res += channels.get(versionNumber).readLong();
+            Res += channels.get(versionNumber).readDouble();
+            System.out.println(channels.get(versionNumber).readDouble());
         }
-        double Result = 0;
+        double Result = 0.0;
         Result = Math.pow(Res, 1.0/(double)q);
 
-        return (long) Result;
+        return Result;
     }
 }
