@@ -23,8 +23,7 @@ public class FindNormMatrix implements AM {
             norm += sum;
         }
 
-        System.out.println("norm " + norm);
         // передача результату на батьківський вузол
-        info.parent.write((double) norm);
+        info.parent.write(norm);
     }
 }
