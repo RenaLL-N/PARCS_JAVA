@@ -54,7 +54,7 @@ public class Solver implements AM
          * **/
         // ініціалізація рандомайзера
         Random random = new Random();
-        int maxValue = 200;
+        int maxValue = 10;
         // генерація матриці та заповнення її рандомними числами
         int[][] matrix = new int[m][n];
         for (int i = 0; i < m; i++) {
