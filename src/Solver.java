@@ -113,8 +113,8 @@ public class Solver implements AM
         // Mapping results
         for(int versionNumber = 0; versionNumber < deamons; versionNumber++)
         {
-            Res += (double)channels.get(versionNumber).readObject();
-            System.out.println((double)channels.get(versionNumber).readObject());
+            Res += channels.get(versionNumber).readDouble();
+            //System.out.println((double)channels.get(versionNumber).readObject());
         }
         double Result = 0.0;
         Result = Math.pow(Res, 1.0/(double)q);
