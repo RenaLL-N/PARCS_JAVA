@@ -15,9 +15,11 @@ public class FindNormMatrix implements AM {
             // сума елементів в степені p по рядках
             for (int j = 0; j < data[i].length; j++) {
                 sum += Math.pow(data[i][j], p);
+                System.out.println("sum " + sum);
             }
 
             sum = Math.pow(sum, (double)q/(double)p);
+            System.out.println("summary " + sum);
             norm += sum;
         }
 
