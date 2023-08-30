@@ -26,6 +26,5 @@ public class FindNormMatrix implements AM {
         System.out.println("norm " + norm);
         // передача результату на батьківський вузол
         info.parent.write((double) norm);
-        System.out.println("ne norm " + (Double)norm);
     }
 }
